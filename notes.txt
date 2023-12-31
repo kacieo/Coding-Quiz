@@ -20,8 +20,6 @@ THEN I can save my initials and score
 
 JS needs:
 - event listner for start button on click w document.queryselector + timer for 75 seconds, decreasing
-
-IN MODAL: 
 - present question, answer question sequence (template literals)
     validation below answer </br> "Correct!" "Incorrect"
 - if answer wrong, then decrease time on clock by "x" amount of seconds
@@ -32,3 +30,52 @@ IN MODAL:
 functions:
     - build quiz
     - show score
+
+
+
+    building quiz flow:
+        // Questions
+    //1. commonly used data types do not include:
+        // strings
+        // booleans
+        // alerts
+        // numbers
+    //answer: numbers
+    //2. Arrays in JS can be used to store:
+        // numbers and strings
+        // other arrays
+        // booleans
+        // all of the above
+    //answer: all of the above
+    //3. condition in if/else statement is enclosed with
+        // quotes
+        // curly braces
+        //  para
+        // brackets
+    //answer: curly braces
+    //4.  string values must be enclosed with
+        // commas
+        // curly brackets
+        //  quotes
+        // paraentheses
+    //answer: quotes
+    //5. A very useful tool during development and debugging for printing content to the debugger is:
+        // javascript
+        // terminal/bash
+        //  for loops
+        // console log
+    //answer: console log
+
+
+    show score flow:
+        when end game, 
+        "All finished!"
+        Your score is: score
+        Enter your initials in text field + submit buttoon
+            View High Scores:
+                initial score
+                XYZ 80
+                QRS 60
+                LMN 20
+
+            Start Over button  
