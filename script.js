@@ -1,5 +1,11 @@
-//event listeners to buttons
-submitButton.addEventListener('click', showResults);
+const startButton = document.getElementById('startButton');
+const quizContainer = document.getElementById('quizContainer');
+const questionTitle = document.getElementById('questionTitle');
+const answerButtons = document.getElementById('answerBtn');
+const resultsContainer = document.getElementById('results');
+
+let currentQuestionIndex = 0;
+let timer = 75;
 
 //displaying questions
 const quizQuestions = [
@@ -29,3 +35,15 @@ const quizQuestions = [
         correctAnswer: "console log"
     },
 ];
+
+//event listeners to button
+startButton.addEventListener('click', startQuiz);
+
+//start quiz
+function startQuiz() {
+    startButton.style.display = 'none';
+    quizContainer.style.display = 'block';
+    displayQuestion();
+    startTimer();
+}
+

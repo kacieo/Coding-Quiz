@@ -11,17 +11,16 @@
         <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/buttons/">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
         <link href="/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-        <title>Coding Quiz</title>
+        <title>Coding Quiz Challenge</title>
     </head>
 <body>
     <h1>Coding Quiz Challenge</h1>
-    <div id="quiz">Hello</div>
-    <button class="btn btn-info rounded-pill px-3" type="button">CHoice1</button>
-    <button class="btn btn-info rounded-pill px-3" type="button">CHoice2</button>
-    <button class="btn btn-info rounded-pill px-3" type="button">CHoice3</button>
-    <button class="btn btn-info rounded-pill px-3" type="button">CHoice4</button>
-    <div id="results"></div>
-
+    <button id="startButton" class="btn btn-info rounded-pill px-3" type="button">Start Quiz</button>
+    <div id="quizContainer" style="display: none;">
+        <h2 id="questionTitle"></h2>
+        <button class="btn btn-info rounded-pill px-3 answerBtn" type="button"></button>
+    </div>
+    <div id="results" style="display:none;"></div>
     <script src="./script.js"></script>
 </body>
 </html>
