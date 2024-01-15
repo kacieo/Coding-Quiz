@@ -113,4 +113,30 @@ function endQuiz() {
 }
 
 //saving score
+function saveScore() {
+    const initialsInput = document.getElementById('initials');
+    const scoreInput = document.getElementById('score');
+    const initials = initialsInput.ariaValueMax.trim();
+    const score = parseInt(scoreInput.value);
+
+    if (initials !== '' && !isNaN(score)) {
+        const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
+        const newScore = { initials, score };
+        highScores.push(newScore);
+        highScores.sort((a,b) => b.score - a.score);
+        localStorage.setItem('highScores', JSON.stringify(highScores));
+
+        displayHighScores();
+    }
+}
 //display high scores
+function displayHighScores() {
+    const highScoresContainer = document.getElementById('highScores');
+    const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
+
+    highScoresContainer.innerHTML = '<h2>High Scores</h2>';
+
+    highScores.forEach((score, index) => {
+        highScoresContainer.innerHTML += '<p>${index + 1'.}. ${score.initials} - ${score.score}</p>
+    });
+}
