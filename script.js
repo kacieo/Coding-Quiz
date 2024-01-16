@@ -70,9 +70,11 @@ function checkAnswer(userAnswer) {
     if (correctAnswer === userAnswer) {
         displayResult(true);
         score += 10;
+        console.log('user answer:', userAnswer, '|', 'correct answer:', correctAnswer, '|', score, timer);
     } else {
         displayResult(false);
         timer -= 10;
+        console.log('user answer:', userAnswer, '|', 'correct answer:', correctAnswer, '|', score, timer);
     }
     
         currentQuestionIndex++;
@@ -90,9 +92,10 @@ function displayResult(isCorrect) {
 
     if(isCorrect) {
         resultsContainer.textContent = "Correct! Great job!";
+        console.log('correct answer:', resultsContainer.textContext)
     } else {
         resultsContainer.textContent = "Sorry, that's not it.";
-
+        console.log('incorrect answer:', resultsContainer.textContext)
     }
 }
 //timer 
