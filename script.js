@@ -57,33 +57,33 @@ function displayQuestion(){
     for (let i = 0; i < answerButtons.length; i++) {
         answerButtons[i].textContent = currentQuestion.choices[i];
         answerButtons[i].addEventListener('click', () => checkAnswer(currentQuestion.choices[i]));
-    
     };
 }
-    //answer validation and display
-    function checkAnswer(userAnswer) {
-        console.log('Checking answer:', userAnswer);
-        
-        const currentQuestion = quizQuestions[currentQuestionIndex];
-        console.log('Current Q', currentQuestionIndex);
-        let correctAnswer = currentQuestion.correctAnswer;
-
-        if (corrrectAnswer.includes(userAnswer)) {
-            displayResult(true);
-            score += 10;
-        } else {
-            displayResult(false);
-            timer -= 10;
-        }
-
+//answer validation and display
+function checkAnswer(userAnswer) {
+    console.log('Checking answer:', userAnswer);
+    
+    const currentQuestion = quizQuestions[currentQuestionIndex];
+    console.log('Current Q', currentQuestionIndex);
+    const correctAnswer = currentQuestion.correctAnswer;
+    
+    if (correctAnswer === userAnswer) {
+        displayResult(true);
+        score += 10;
+    } else {
+        displayResult(false);
+        timer -= 10;
+    }
+    
         currentQuestionIndex++;
-
-        if(currentQuestionIndex < quizQuestions.length && timer > 0) {
+    
+        if (currentQuestionIndex < quizQuestions.length && timer > 0) {
             displayQuestion();
         } else {
             endQuiz();
         }
     }
+    
 
 function displayResult(isCorrect) {
     const resultsContainer = document.getElementById('results');
@@ -126,9 +126,9 @@ function endQuiz() {
 function saveScore() {
     console.log('Saving score');
     const initialsInput = document.getElementById('initials');
-    const scoreInput = document.getElementById('score');
     const initials = initialsInput.value.trim();
-    const score = parseInt(scoreInput.value);
+    //const scoreInput = document.getElementById('score');
+    //const score = parseInt(scoreInput.value);
 
     if (initials !== '' && !isNaN(score)) {
         const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
@@ -137,7 +137,7 @@ function saveScore() {
         highScores.sort((a,b) => b.score - a.score);
         localStorage.setItem('highScores', JSON.stringify(highScores));
 
-        displayHighScores();
+        displayHighScores(score);
     }
 }
 //display high scores
